@@ -16,7 +16,6 @@ X=df.values
 sc= StandardScaler()
 sc.fit(X)
 X=sc.transform(X)
-
 #Reduccion de dimensionalidad hasta obtener una varianza de 90% o mas
 pca=PCA(n_components=8)
 pca.fit(X)
@@ -26,7 +25,7 @@ print('Varianza:',sum(Var))
 
 #Declaracion de variables auxiliares
 Kinicial=2
-Kfinal=10
+Kfinal=20
 step=1
 Silueta=[]
 K=[]
@@ -36,7 +35,7 @@ K_PCA=[]
 ##Comprobacion de mejor k y random state para el conjunto de datos estudiado, sin PCA y con PCA
 
 #Se prueban diferentes valores para random state
-for rs in range(0,10):
+for rs in range(0,20):
   #Limpiado de listas auxiliares
   Silueta_aux=[]
   K_aux=[]
